@@ -1,0 +1,18 @@
+
+  .hide {
+    display:none !important ;
+  }
+
+  body{
+    background: #352f5b;
+  }
+  .container{
+    max-width: 600px;
+  }
+ 
+  .todos li{
+    background: #423a6f;
+  }
+  .delete{
+    cursor: pointer;
+  }
