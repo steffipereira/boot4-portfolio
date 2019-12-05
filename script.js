@@ -35,16 +35,16 @@ deleteButton.addEventListener('click', (e)=> {
 const filteredTodo = (filterItem) => {
     //console.log(newItem.children);
 Array.from(newItem.children)
-    .filter(todo=> !todo.textContent.includes(filterItem))
+    .filter(todo=> !todo.textContent.toLowerCase().includes(filterItem))
     .forEach(todo => todo.classList.add('hide'));
 
 Array.from(newItem.children)
-    .filter(todo=> todo.textContent.includes(filterItem))
+    .filter(todo=> todo.textContent.toLowerCase().includes(filterItem))
     .forEach(todo => todo.classList.remove('hide'));
 }
 
 searchTask.addEventListener('keyup', () => {
-    const filterItem = searchTask.value.trim();
+    const filterItem = searchTask.value.trim().toLowerCase();
     filteredTodo(filterItem);
     console.log(filterItem);
 
