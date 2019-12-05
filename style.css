@@ -101,8 +101,7 @@ body{
     float:right;
   }
   .hide {
-    display:none;
-    background: #000;
+    display: none !important;
   }
 
   /* body{

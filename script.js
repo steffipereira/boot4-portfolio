@@ -5,7 +5,7 @@ const newItem = document.querySelector('div.todo-list.box ul');
 const deleteButton = document.querySelector('.complete-list.box');
 const deleteButton2 = document.querySelector('.complete-list.box ul');
 //const checkbox = document.querySelectorAll('input[type="checkbox"]');
-const searchTask = document.querySelector('#search-task');
+const searchTask = document.querySelector('input#search-task');
 
 
 let generateTemplate = (item) => {
@@ -35,26 +35,18 @@ deleteButton.addEventListener('click', (e)=> {
 const filteredTodo = (filterItem) => {
     //console.log(newItem.children);
 Array.from(newItem.children)
-    .filter(todo=>{
-       console.log( !todo.textContent.includes(filterItem));
-    })
-    .forEach(todo => {
-        todo.classList.add('hide');
-    })
+    .filter(todo=> !todo.textContent.includes(filterItem))
+    .forEach(todo => todo.classList.add('hide'));
 
 Array.from(newItem.children)
-    .filter(todo=>{
-        todo.textContent.includes(filterItem)
-    })
-    .forEach(todo => {
-        todo.classList.remove('hide');
-    })
+    .filter(todo=> todo.textContent.includes(filterItem))
+    .forEach(todo => todo.classList.remove('hide'));
 }
 
 searchTask.addEventListener('keyup', () => {
     const filterItem = searchTask.value.trim();
     filteredTodo(filterItem);
-    //console.log(filterItem);
+    console.log(filterItem);
 
 });
 
